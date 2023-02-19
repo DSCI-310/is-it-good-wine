@@ -18,7 +18,7 @@ The group will create a collaborative meeting agenda before meetings to keep mee
 
 1. Justin: 9-5 throughout the week, but flexible if we need to have emergency meetings
 2. Anthony: Not available in person on Wednesday. Flexible if there is emergent situations.
-3. Christina: 
+3. Christina: Afer 3:30 pm on Tuesdays/Thursdays. Variable availability on other days but flexible if there are urgent issue.
 
 ### Communication & Working Style
 * What will be the style of working?
