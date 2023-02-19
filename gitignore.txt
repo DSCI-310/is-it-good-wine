@@ -1,0 +1,4 @@
+# ipynb files
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+git rm -r .ipynb_checkpoints/
