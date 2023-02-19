@@ -1,4 +1,8 @@
 # ipynb files
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
-git rm -r .ipynb_checkpoints/
+
+# virtual documents
+.virtual_documents
+*/.ipynb_checkpoints/*
+git rm -r .virtual_documents/
