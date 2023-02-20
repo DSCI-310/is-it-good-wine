@@ -24,10 +24,7 @@ a unix shell (e.g., terminal or Git Bash)*
 
 To replicate the analysis, install
 [Docker](https://www.docker.com/get-started). Then clone this GitHub
-repository and run the following command at the command line/terminal
-from the root directory of this project:
-
-    docker run --rm -v ........
+repository and build a docker container with the dockerfile included in this repository
     
     
     
