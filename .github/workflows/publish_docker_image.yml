@@ -3,7 +3,11 @@ name: Docker Image CI
 on:
   workflow_dispatch:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
+      - milestone-1-dockerfix
+    paths:
+      - 'Dockerfile'
 
 jobs:
 
