@@ -1,3 +1,10 @@
+# DS STORE
+**/.DS_Store
+.DS_Store
+
+# pycache
+__pycache__/
+**/__pycache__
 # ipynb files
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
