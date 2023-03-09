@@ -5,6 +5,7 @@
 # pycache
 __pycache__/
 **/__pycache__
+
 # ipynb files
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
