@@ -17,11 +17,6 @@ It was sourced from the UCI Machine Learning Repository and can be found [here](
 
 ## Usage
 
-We suggest to use docker to run the data analysis.
-
-*note - the instructions in this section also depends on running this in
-a unix shell (e.g., terminal or Git Bash)*
-
 To replicate the analysis, install
 [Docker](https://www.docker.com/get-started). Then clone this GitHub
 repository and build a docker container with the dockerfile included in this repository by running the following commands in the unix shell:
