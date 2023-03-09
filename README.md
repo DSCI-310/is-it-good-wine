@@ -24,9 +24,20 @@ a unix shell (e.g., terminal or Git Bash)*
 
 To replicate the analysis, install
 [Docker](https://www.docker.com/get-started). Then clone this GitHub
-repository and build a docker container with the dockerfile included in this repository
-    
-    
+repository and build a docker container with the dockerfile included in this repository by running the following commands in the unix shell:
+
+
+1.
+```
+docker build -t wineclass .
+```
+
+2.
+```
+docker run -v $(pwd):/app -p 8888:8888 my-jupyter-notebook
+```
+
+Runnning these two commands in the unix shell will generate a file called report.html that you can view in any browser application (e.g. Chrome, Firefox).
     
 ## Dependencies:
 * Python 3.10 and Python packages:
