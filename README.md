@@ -29,7 +29,7 @@ docker build -t wineclass .
 
 2.
 ```
-docker run -v $(pwd):/app -p 8888:8888 my-jupyter-notebook
+docker run -v $(pwd):/app -p 8888:8888 wineclass
 ```
 
 Runnning these two commands in the unix shell will generate a file called report.html that you can view in any browser application (e.g. Chrome, Firefox).
