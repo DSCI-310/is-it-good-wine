@@ -11,7 +11,7 @@ from sklearn.naive_bayes import GaussianNB
 
 from src.pipeline import pipe_build
 from sklearn.datasets import make_moons
-
+import pytest
 
 
 ## making data for test

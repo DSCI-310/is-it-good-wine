@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from src.preprocess import preprocessor
+import pytest
 
 #create dataset for test
 df = pd.read_csv('data/winequality-red.csv', sep=',')[0:10]

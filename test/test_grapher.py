@@ -3,6 +3,7 @@ import pandas as pd
 from src.grapher import correlation_table, bar_chart, vis_tree, compare_scores, show_coefficients, show_correct
 import altair
 from matplotlib import pyplot as plt
+import pytest
 
 # dummy data
 
