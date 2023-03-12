@@ -9,7 +9,7 @@ from sklearn.metrics import classification_report
 from sklearn.dummy import DummyClassifier
 from sklearn.naive_bayes import GaussianNB
 
-from pipeline import pipe_build
+from src.pipeline import pipe_build
 from sklearn.datasets import make_moons
 
 
@@ -21,7 +21,11 @@ X_test, y_test = make_moons(n_samples = 50)
 
 ## test for pipe_build
 
-def test_pipe_build_dummy():
+# DESCRIPTION: Compare the accruacy of expected models and actual models created by pipe_build, each case will be checked by a seperate test
+# ACTION: use assert and score function to compare different models' accuracy 
+# RETURNS: return errors message if the accuracy is not the same, return none if the test pass
+
+def test_pipe_build_dummy():    
     expected = DummyClassifier(strategy='most_frequent').fit(X_train, y_train)
     actual = pipe_build('dummy', X_train, y_train)
     # assert actual == expected, \ ### I don't know why it always are false
