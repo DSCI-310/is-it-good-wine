@@ -17,17 +17,22 @@ It was sourced from the UCI Machine Learning Repository and can be found [here](
 
 ## Usage
 
-We suggest to use docker to run the data analysis.
+To replicate the analysis, install Docker and run the Docker application. Then clone this GitHub repository and build a docker container with the dockerfile included in this repository by:
 
-*note - the instructions in this section also depends on running this in
-a unix shell (e.g., terminal or Git Bash)*
+1. Navigating to the local repository that holds the 'Dockerfile' for this project.
 
-To replicate the analysis, install
-[Docker](https://www.docker.com/get-started). Then clone this GitHub
-repository and build a docker container with the dockerfile included in this repository
-    
-    
-    
+2. Running the following commands in the unix shell
+```
+docker build -t wineclass .
+```
+```
+docker run -v $(pwd):/app -p 8888:8888 wineclass
+```
+3. Runnning these two commands in the unix shell will generate a file called report.html that you can view in any browser application (e.g. Chrome, Firefox).
+
+4. Open 'report.html' and view the report.
+
+
 ## Dependencies:
 * Python 3.10 and Python packages:
   - altair==4.1.0 
