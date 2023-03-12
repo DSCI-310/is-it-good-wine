@@ -41,7 +41,8 @@ docker run -v $(pwd):/app -p 8888:8888 wineclass
   - matplotlib==3.6.3 
   - scikit-learn==1.2.1 
   - ipython==8.8.0
-  - pytest== 7.7.2
+  - pytest==7.2.2
+  - jupyter==1.0.0
 
 
 ## Licences: 
