@@ -1,22 +1,18 @@
-import altair as alt
-import numpy as np
-import pandas as pd
-from matplotlib import pyplot as plt
-
-from sklearn.model_selection import cross_val_score, cross_validate, train_test_split
+# Import required sklearn packages for model construction
 from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import RepeatedKFold
 from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import make_pipeline
-from sklearn.svm import SVC
-from sklearn.tree import DecisionTreeClassifier, plot_tree
-from sklearn.metrics import classification_report
 from sklearn.dummy import DummyClassifier
-from IPython import display
 from sklearn.naive_bayes import GaussianNB
 
 
 def pipe_build(model, X_train, y_train):
+    # DESCRIPTION: Generates specified ML model based on 'model' as a string
+    # ACTION: Creates a pipeline with appropriate transformations (scaling, etc.)
+    # and fits the specified model with optimized hyperparameters to the training data
+    # RETURNS: the pipeline object (model) for evaluation in wineclassification.ipynb
+    # TODO: Modularize hyperparameter values
+    
     if model == 'dummy':
         baseline = DummyClassifier(strategy='most_frequent')
         pipe = baseline.fit(X_train, y_train)
