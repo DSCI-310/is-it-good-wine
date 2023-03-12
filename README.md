@@ -18,7 +18,7 @@ It was sourced from the UCI Machine Learning Repository and can be found [here](
 ## Usage
 
 To replicate the analysis, install
-[Docker](https://www.docker.com/get-started). Then clone this GitHub
+[Docker](https://www.docker.com/get-started) and run the Docker application. Then clone this GitHub
 repository and build a docker container with the dockerfile included in this repository by running the following commands in the unix shell:
 
 
