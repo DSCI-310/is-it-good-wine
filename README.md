@@ -36,6 +36,7 @@ repository and build a docker container with the dockerfile included in this rep
   - matplotlib==3.6.3 
   - scikit-learn==1.2.1 
   - ipython==8.8.0
+  - pytest== 7.7.2
 
 
 ## Licences: 
