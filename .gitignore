@@ -15,3 +15,6 @@ __pycache__/
 .virtual_documents
 */.ipynb_checkpoints/*
 git rm -r .virtual_documents/
+
+# report html
+.report
