@@ -26,7 +26,7 @@ To replicate the analysis, install Docker and run the Docker application. Then c
 docker build -t wineclass .
 ```
 ```
-docker run -v --rm $(pwd):/app -p 8888:8888 wineclass
+docker run -v $(pwd):/app -p 8888:8888 --rm wineclass
 ```
 3. Runnning these two commands in the unix shell will generate a file called report.html that you can view in any browser application (e.g. Chrome, Firefox).
 
