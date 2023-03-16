@@ -21,8 +21,15 @@ EXPOSE 8888
 # Set the working directory to /app
 WORKDIR /app
 
+## Remove this comment to always bust the Docker cache at this step
+## https://stackoverflow.com/a/55621942/591574
+ADD https://github.com/rstudio/plumber/commits/ _docker_cache
+
 # Copy the current directory contents into the container at /app
 COPY . /app
 
 # Start Jupyter Notebook and export the report to HTML
+RUN ["jupyter", "nbconvert", "--to", "html", "--execute", "wineclassification.ipynb", "--output", "report.html", "--ExecutePreprocessor.timeout=-1"]
+
+# Flexibility to pass into CMD if needed
 CMD ["jupyter", "nbconvert", "--to", "html", "--execute", "wineclassification.ipynb", "--output", "report.html", "--ExecutePreprocessor.timeout=-1"]
