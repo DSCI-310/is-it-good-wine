@@ -1,5 +1,6 @@
 FROM jupyter/scipy-notebook:python-3.10
 
+
 USER root
 
 # Install necessary python packages - the jupyter/scipy-notebook contains the following commented packages: 
