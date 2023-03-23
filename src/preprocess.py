@@ -5,6 +5,8 @@ def preprocessor(df, tort):
     # DESCRIPTION: Splits the dataset of the specified 'df' (dataframe) into
     # training and testing data, generates a 'target' variable for the ML
     # model to classify given the value of the quality of each example.
+    # INPUTS: df - a dataframe object that contains the entirety of the dataset, for splitting.
+            # tort - a binary value (0, 1) that specifies whether to return the train or test dataframe.
     # ACTION: Splits the dataset of the specified 'df' (dataframe) into
     # training and testing data, uses np.where to assign a 0 to the target
     # column of examples that have quality < 5, assigns a 1 to the target

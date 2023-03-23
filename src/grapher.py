@@ -6,6 +6,7 @@ from sklearn.tree import DecisionTreeClassifier, plot_tree
 def correlation_table(df):
     # DESCRIPTION: Displays a correlation table (correlation coefficient value
     # of each variable to each other variable).
+    # INPUTS: df - A dataframe object containing prediction features.
     # ACTION: Inputs a dataframe and displays the correlation coefficients in
     # a square grid.
     # RETURNS: The table as a display.
@@ -37,6 +38,7 @@ def correlation_table(df):
 def bar_chart(df):
     # DESCRIPTION: Displays a simple bar chart of the count of the quality variable.
     # ACTION: Inputs a dataframe and displays the bar chart.
+    # INPUTS: df - A dataframe object
     # RETURNS: The bar chart as a display.
     # TODO: 1. Modularize the variables that you can input into the chart
     # 2. Move from altair to matplotlib
@@ -49,6 +51,8 @@ def vis_tree(X_train, y_train):
     # DESCRIPTION: Displays a visual example of a decision tree for conceptual
     # purposes. The max_depth variable is limited to 3 so that the visualization
     # is interpretable.
+    # INPUTS: X_train - a dataframe object containing prediction features
+            # y_train - a series object containing target variables.
     # ACTION: Inputs an X_train dataframe and y_train series and displays the 
     # decision tree model and each of its chosen parameter splits.
     # RETURNS: The decisision tree model as a display.
@@ -68,6 +72,7 @@ def vis_tree(X_train, y_train):
 def compare_scores(lst):
     # DESCRIPTION: Displays a bar chart comparing the accuracy scores of each
     # ML model in the 'lst' list.
+    # INPUTS: lst - a list of floats (accuracy scores) of each model.
     # ACTION: Inputs a list (lst) of ML model accuracy scores, generates a
     # dataframe named 'report' and turns this dataframe into a bar chart.
     # RETURNS: The bar chart where the highlighted bar is the highest score.
@@ -97,6 +102,8 @@ def compare_scores(lst):
 def show_coefficients(pipe, X_train):
     # DESCRIPTION: Displays a dataframe with the coefficients of the Logistic
     # Regression model.
+    # INPUTS: pipe - a pipeline object containing scikit-learn model transformers, and a scikit-learn model.
+            # X_train - a dataframe object containing prediction features.
     # ACTION: Inputs a LogisticRegression model, and an X_train dataset.
     # Names the pipe variables given the named_steps in the logistic regression
     # in an array called 'flatten'. Returns the dataframe 'coeffs' with the
@@ -120,6 +127,9 @@ def show_coefficients(pipe, X_train):
 def show_correct(pipe, X_test, y_test):
     # DESCRIPTION: Displays a dataframe with the True Positive + True Negative
     # versus the False Positive + False Negative ratio of the classifier model.
+    # INPUTS: pipe - a pipeline object containing scikit-learn model transformers, and a scikit-learn model.
+            # X_test - a dataframe object containing prediction features.
+            # y_test - a series object containing target variables.
     # ACTION: Inputs a model (pipe), and testing data; calls predict on the 
     # test data and reports the correct classifications versus the incorrect
     # classifications.
