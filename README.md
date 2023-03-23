@@ -17,22 +17,27 @@ It was sourced from the UCI Machine Learning Repository and can be found [here](
 
 ## Usage
 
-To replicate the analysis, install Docker and run the Docker application. Then clone this GitHub repository and build a docker container with the dockerfile included in this repository by:
+To replicate the analysis, install
+[Docker](https://www.docker.com/get-started) and run the Docker application. Then clone this GitHub
+repository and build a docker container with the dockerfile included in this repository by running the following commands in the unix shell:
 
-1. Navigating to the local repository that holds the 'Dockerfile' for this project.
+**Mac/Linux Instructions**
 
-2. Running the following commands in the unix shell
+1.
 ```
-docker build -t wineclass .
+docker pull jkungcc/dsci-310-group11:latest
 ```
+
+2.
 ```
-docker run -v $(pwd):/app -p 8888:8888 wineclass
+docker run -p 8888:8888 --rm -it jkungcc/dsci-310-group11:latest
 ```
-3. Runnning these two commands in the unix shell will generate a file called report.html that you can view in any browser application (e.g. Chrome, Firefox).
 
-4. Open 'report.html' and view the report.
+**Windows Instructions**
 
 
+Runnning these two commands in the unix shell will generate a file called report.html that you can view in any browser application (e.g. Chrome, Firefox).
+    
 ## Dependencies:
 * Python 3.10 and Python packages:
   - altair==4.1.0 
@@ -42,7 +47,6 @@ docker run -v $(pwd):/app -p 8888:8888 wineclass
   - scikit-learn==1.2.1 
   - ipython==8.8.0
   - pytest==7.2.2
-  - jupyter==1.0.0
 
 
 ## Licences: 
