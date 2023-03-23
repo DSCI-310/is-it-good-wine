@@ -11,7 +11,8 @@ USER root
 # scikit-learn==1.2.1
 # ipython==8.8.0
 
-RUN pip install pytest=7.2.2
+RUN pip install pytest==7.2.2 argparse==1.4.0
+RUN pip install -U jupyterbook==0.15.1
 
 # Switch back to non-root user
 USER $NB_UID
