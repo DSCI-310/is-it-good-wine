@@ -38,7 +38,13 @@ docker run -p 8888:8888 --rm -it jkungcc/dsci-310-group11:latest
 W.I.P
 
 
-Runnning these two commands in the unix shell will generate a file called report.html that you can view in any browser application (e.g. Chrome, Firefox).
+Runnning these commands in the unix shell will host a jupyter lab instance in a docker container that can be accessed by copy and pasting the second URL in the command line output into a browser (e.g. Chrome, Firefox):
+
+```
+http://127.0.0.1:8888/lab?token=<token> # Tokens are generated randomly on each 'docker run' instance.
+```
+
+The report can then be viewed and interacted with through the jupyter lab interface via report.html (non-interactive static render) and wineclassification.ipynb (interactive python notebook environment).
     
 ## Dependencies:
 * Python 3.10 and Python packages:
