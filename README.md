@@ -35,6 +35,8 @@ docker run -p 8888:8888 --rm -it jkungcc/dsci-310-group11:latest
 
 **Windows Instructions**
 
+W.I.P
+
 
 Runnning these two commands in the unix shell will generate a file called report.html that you can view in any browser application (e.g. Chrome, Firefox).
     
