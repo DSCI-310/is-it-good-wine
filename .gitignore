@@ -17,4 +17,4 @@ __pycache__/
 git rm -r .virtual_documents/
 
 # report html
-.report
+.html/
