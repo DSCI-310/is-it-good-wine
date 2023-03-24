@@ -2,6 +2,8 @@ import altair as alt
 import pandas as pd
 from matplotlib import pyplot as plt
 from sklearn.tree import DecisionTreeClassifier, plot_tree
+import seaborn as sns
+from sklearn.metrics import classification_report
 
 def correlation_table(df):
     # DESCRIPTION: Displays a correlation table (correlation coefficient value
@@ -34,8 +36,6 @@ def correlation_table(df):
     xy = table.to_json('corrtab.json')
     return xy
 
-
-
 def bar_chart(df):
     # DESCRIPTION: Displays a simple bar chart of the count of the quality variable.
     # ACTION: Inputs a dataframe and displays the bar chart.
@@ -49,6 +49,12 @@ def bar_chart(df):
     xyy = x.to_json('bar.json')
     return xyy
 
+def class_report(pipe, X_test, y_test):
+    clf_report = classification_report(y_test, pipe.predict(X_test), output_dict=True)
+    report = sns.heatmap(pd.DataFrame(clf_report).iloc[:-1, :].T, annot=True, linewidth=.5, cmap="crest")
+    fig = report.get_figure()
+    return fig
+
 def vis_tree(X_train, y_train):
     # DESCRIPTION: Displays a visual example of a decision tree for conceptual
     # purposes. The max_depth variable is limited to 3 so that the visualization
@@ -58,18 +64,14 @@ def vis_tree(X_train, y_train):
     # ACTION: Inputs an X_train dataframe and y_train series and displays the 
     # decision tree model and each of its chosen parameter splits.
     # RETURNS: The decisision tree model as a display.
-    vis_tree = DecisionTreeClassifier(max_depth=3,
+    vistree = DecisionTreeClassifier(max_depth=3,
                               random_state=1234,
                               class_weight='balanced')
 
-    model2 = vis_tree.fit(X_train, y_train)
+    model2 = vistree.fit(X_train, y_train)
 
     fig = plt.figure(figsize=(15, 5))
-    _ = plot_tree(vis_tree,
-                  feature_names=X_train.columns,
-                  class_names='target',
-                  filled=True,
-                  fontsize=7)
+    plot_tree(vistree, feature_names=X_train.columns, class_names='target', filled=True, fontsize=7)
 
 def compare_scores(lst):
     # DESCRIPTION: Displays a bar chart comparing the accuracy scores of each
@@ -99,6 +101,7 @@ def compare_scores(lst):
             'steelblue')  # And if it's not true it sets the bar steelblue.
     )).properties(width=500, height=200).configure(background='lightgrey')
 
+    y = y.to_json('scores.json')
     return y
 
 def show_coefficients(pipe, X_train):

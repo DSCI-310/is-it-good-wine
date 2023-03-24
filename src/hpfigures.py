@@ -4,7 +4,7 @@ import numpy as np
 from optimize import hp_optimizer
 import argparse
 
-def hp_figures(input_path, input_model, output_path):
+def hpfigures(input_path, input_model, output_path):
     input_training = pd.read_csv(input_path)
 
     # Splitting into X and y train and test sets
@@ -13,7 +13,8 @@ def hp_figures(input_path, input_model, output_path):
 
     df = hp_optimizer(input_model, X_train, y_train)
     df_styled = df.style.background_gradient()
-    dfi.export(df_styled, output_path + '.png')
+    dfi.export(df_styled, output_path + input_model + 'table.png')
+    
 
 if __name__ == "__main__":
     # Set up command-line argument parsing
@@ -24,4 +25,4 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     # Call the eda function with the command-line arguments
-    hp_figures(args.input_path, args.input_model, args.output_path)
+    hpfigures(args.input_path, args.input_model, args.output_path)
