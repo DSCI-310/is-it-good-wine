@@ -3,7 +3,7 @@
 Authors: Anthony Huang, Christina Pan, and Justin Kung
 
 ## About
-In this project we attempt to build a classification model which can use chemical ingredients of wine to predict the quality of wine.
+This project seeks to build a classification model which can use chemical ingredients of wine to predict the quality of wine.
 Among all of mour models, the SVC RBF model obtained a best score of 0.76, which is not sufficient to accurately predict wine quality based on its chemical qualities. 
 While the lower accuracy score is not ideal, it is expected. 
 Errors in the predictions may be due to the limitations of the methods used; however, it is likely also due to the varying preferences of the individuals surveyed to obtain the data.
