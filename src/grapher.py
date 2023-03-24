@@ -31,7 +31,8 @@ def correlation_table(df):
         alt.Tooltip(['correlation_label']),
     ).interactive().properties(width=300, height=300)
 
-    return table
+    xy = table.to_json('corrtab.json')
+    return xy
 
 
 
@@ -45,7 +46,8 @@ def bar_chart(df):
     x = alt.Chart(df).mark_bar().encode(alt.X('quality:O'),
                                         alt.Y('count()')).properties(width=200,
                                                                      height=100)
-    return x
+    xyy = x.to_json('bar.json')
+    return xyy
 
 def vis_tree(X_train, y_train):
     # DESCRIPTION: Displays a visual example of a decision tree for conceptual
