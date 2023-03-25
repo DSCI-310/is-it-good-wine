@@ -13,6 +13,9 @@ def hp_optimizer(model, X_train, y_train):
     # DESCRIPTION: Maximizes model accuracy based on tuning hyperparameters of each model (respective if statements)
     # ACTION: Loops over chosen hyperparemeters in a the scores_dict/param_grid dictionary
     # and appends the mean cross validation score of each hyperparameter to the scores_dict dictionary
+    # INPUTS: model - an input string, referencing the specific model that the function should run.
+            # X_train - a dataframe object containing prediction features.
+            # y_train - a series object containing target variables.
     # RETURNS: Dataframe containing the mean cross validation scores of each hyperparameter value
     # TODO: Modularize param_grid values
     
@@ -39,45 +42,44 @@ def hp_optimizer(model, X_train, y_train):
     # C: Regularization; penalty of wrongly classified examples
     # Gamma: Strenghth of the influence of individual examples
     elif model == 'svm':
-        best_score = 0
-
         param_grid = {
-        "C": [0.001, 0.01, 0.1, 1, 10, 100],
-        "gamma": [0.001, 0.01, 0.1, 1, 10, 100],
+            "C": [0.001, 0.01, 0.1, 1, 10, 100],
+            "gamma": [0.001, 0.01, 0.1, 1, 10, 100]
         }
 
-        for gamma in param_grid["gamma"]:
-            for C in param_grid["C"]:
-                pipe_svc = make_pipeline(
-                    StandardScaler(),
-                    SVC(gamma=gamma, C=C, class_weight='balanced', random_state=1234))
-                scores = cross_val_score(pipe_svc, X_train, y_train, cv=5)
-                mean_score = np.mean(scores)
-                if (mean_score > best_score):
-                    best_score = mean_score
-                    best_parameters = {"C": C, "gamma": gamma}
+        results_dict = {"C": [], "gamma": [], "mean_cv_score": []}
 
-        print(best_parameters, ", best_score:", best_score)
+        for gamma in param_grid["gamma"]:
+            for C in param_grid["C"]:  # for each combination of parameters, train an SVC
+                pipe_svm = make_pipeline(StandardScaler(), SVC(gamma=gamma, C=C, class_weight='balanced', random_state=1234))
+                scores = cross_val_score(pipe_svm, X_train, y_train, cv=5)
+                mean_score = np.mean(scores)
+            
+                results_dict["C"].append(C)
+                results_dict["gamma"].append(gamma)
+                results_dict["mean_cv_score"].append(mean_score)
+
+
+        results_df = pd.DataFrame(results_dict).head(10)
+        return results_df
 
     # Decision Tree Classification optimizes the 'max depth' value
     # Max Depth: How many parameters (splits/decisions) to stop at
     elif model == 'dtc':
-        best_score = 0
 
         param_grid = {"max_depth": np.arange(1, 20, 2)}
 
         results_dict = {"max_depth": [], "mean_cv_score": []}
         for depth in param_grid["max_depth"]:
-            dtc = DecisionTreeClassifier(max_depth=depth, class_weight='balanced')
+            dtc = DecisionTreeClassifier(max_depth=depth, class_weight='balanced', random_state=1234)
             scores = cross_val_score(dtc, X_train, y_train)
             mean_score = np.mean(scores)
-
-            if (mean_score > best_score):
-                best_score = mean_score
-                best_params = {"max_depth": depth}
 
             results_dict["max_depth"].append(depth)
             results_dict["mean_cv_score"].append(mean_score)
 
         results_df = pd.DataFrame(results_dict)
         return results_df
+    
+    else:
+        return 'Error: You need to input a proper model'

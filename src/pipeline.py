@@ -10,6 +10,9 @@ from sklearn.tree import DecisionTreeClassifier
 
 def pipe_build(model, X_train, y_train):
     # DESCRIPTION: Generates specified ML model based on 'model' as a string
+    # INPUTS: model - an input string, referencing the specific model that the function should run.
+            # X_train - a dataframe object containing prediction features.
+            # y_train - a series object containing target variables.
     # ACTION: Creates a pipeline with appropriate transformations (scaling, etc.)
     # and fits the specified model with optimized hyperparameters to the training data
     # RETURNS: the pipeline object (model) for evaluation in wineclassification.ipynb
