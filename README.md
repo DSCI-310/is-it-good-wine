@@ -25,15 +25,20 @@ repository and build a docker container with the dockerfile included in this rep
 
 **CURRENT WORKING VERSION: Without using Docker**
 To replicate the analysis, clone this GitHub repository, install the dependencies listed below, navigate to the project directory via terminal/command line, and run the following command:
+
+1.
 ```
 make all
 ```
 To reset the repo to a clean state, with no intermediate or results files, run the following command at the command line/terminal from the root directory of this project:
+
+2.
 ```
 make clean
 ```
 
 **IN PROGRESS: Using Docker**
+
 1.
 ```
 docker pull jkungcc/dsci-310-group11:latest
