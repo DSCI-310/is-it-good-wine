@@ -23,7 +23,7 @@ repository and build a docker container with the dockerfile included in this rep
 
 **Mac/Linux Instructions**
 
-Preqrequisites (*note: the Makefile process will be improved for project final submission to be included with the Docker build process*):
+Preqrequisites (*note to TA: the Makefile process will be improved for project final submission to be included with the Docker build process*):
 
 Please install the dependencies listed under the dependency list and run the makefile in the terminal by navigating to the project directory and executing:
 
