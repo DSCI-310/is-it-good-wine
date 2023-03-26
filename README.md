@@ -51,6 +51,11 @@ The report can then be viewed and interacted with through the jupyter lab interf
   - ipython==8.8.0
   - pytest==7.2.2
   - jupyter-book==0.15.1
+  - argparse==1.4.0
+  - requests==2.28.2
+  - jinja2==3.0.3
+  - dataframe-image==0.1.7
+  - vl-convert-python==0.7.0
 
 
 ## Licences: 
