@@ -1,5 +1,4 @@
 import argparse
-import pandas as pd
 import requests
 
 def download_data(output_path):
