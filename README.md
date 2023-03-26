@@ -27,13 +27,14 @@ Preqrequisites (*note to TA: the Makefile process will be improved for project f
 
 Please install the dependencies listed under the dependency list and run the makefile in the terminal by navigating to the project directory and executing:
 
-0.0.
+0.0
 ```
   - pip install pytest==7.2.2 argparse==1.4.0 requests==2.28.2 jinja2==3.0.3 dataframe-image==0.1.7 vl-convert-python==0.7.0
   - pip install -U jupyter-book==0.15.1
 
 ```
-0.1.
+
+0.1
 ```
 make all 
 ```
