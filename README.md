@@ -23,6 +23,21 @@ repository and build a docker container with the dockerfile included in this rep
 
 **Mac/Linux Instructions**
 
+Preqrequisites (*note: the Makefile process will be improved for project final submission to be included with the Docker build process*):
+
+Please install the dependencies listed under the dependency list and run the makefile in the terminal by navigating to the project directory and executing:
+
+0.0.
+```
+  - pip install pytest==7.2.2 argparse==1.4.0 requests==2.28.2 jinja2==3.0.3 dataframe-image==0.1.7 vl-convert-python==0.7.0
+  - pip install -U jupyter-book==0.15.1
+
+```
+0.1.
+```
+make all 
+```
+
 1.
 ```
 docker pull jkungcc/dsci-310-group11:latest
