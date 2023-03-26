@@ -39,14 +39,6 @@ Runnning these commands in the unix shell will host a jupyter lab instance in a 
 http://127.0.0.1:8888/lab?token=<token> # Tokens are generated randomly on each 'docker run' instance.
 ```
 
-3.
-After running the jupyter lab, use the following line in the terminal to run the makefile, which generates the data, tables, and graphs for the report, and also create a html file called report
-
-```
-make all
-
-```
-
 The report can then be viewed and interacted with through the jupyter lab interface via report.html (non-interactive static render) and wineclassification.ipynb (interactive python notebook environment).
     
 ## Dependencies:
