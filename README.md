@@ -23,7 +23,7 @@ repository and build a docker container with the dockerfile included in this rep
 
 **Mac/Linux Instructions**
 
-**CWithout using Docker**
+**Without Docker**
 To replicate the analysis, clone this GitHub repository, install the dependencies listed below, navigate to the project directory via terminal/command line, and run the following command:
 
 1.
@@ -51,13 +51,15 @@ docker run -p 8888:8888 --rm -it jkungcc/dsci-310-group11:latest
 
 Runnning these commands in the unix shell will host a jupyter lab instance in a docker container that can be accessed by copy and pasting the second URL in the command line output into a browser (e.g. Chrome, Firefox):
 
+<img width="450" alt="Jupyter Lab Terminal Output" src="https://user-images.githubusercontent.com/60054170/228313869-cb4c7996-5584-49f4-ba70-558440ce46b0.png">
+
 ```
 http://127.0.0.1:8888/lab?token=<token> # Tokens are generated randomly on each 'docker run' instance.
 ```
 
 Open the Jupyter lab terminal and run the following command
 
-<img width="870" alt="123" src="https://user-images.githubusercontent.com/60054170/228313005-f5e4a3bf-9574-4166-955b-a1be6c0fe5da.png">
+<img width="470" alt="Jupyter Lab Terminal" src="https://user-images.githubusercontent.com/60054170/228313005-f5e4a3bf-9574-4166-955b-a1be6c0fe5da.png">
 
 3.
 ```
