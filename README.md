@@ -66,13 +66,13 @@ The report can then be viewed and interacted with through the jupyter lab interf
   - scikit-learn==1.2.1 
   - ipython==8.8.0
   - pytest==7.2.2
-  - jupyter-book==0.15.1
   - argparse==1.4.0
   - requests==2.28.2
   - jinja2==3.0.3
   - dataframe-image==0.1.7
   - vl-convert-python==0.7.0
-  - [quarto==1.3.290](https://quarto.org/docs/get-started/)
+* [quarto==1.3.290](https://quarto.org/docs/get-started/)
+* [GNU make 3.81](https://gnu.mirror.constant.com/make/)
 
 
 ## Licences: 
