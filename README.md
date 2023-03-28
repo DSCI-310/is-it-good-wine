@@ -68,7 +68,7 @@ make
 
 To reset the repo to a clean state, with no intermediate or results files, run the following command at the command line/terminal from the root directory of this project:
 
-3a.
+4.
 ```
 make clean
 ```
