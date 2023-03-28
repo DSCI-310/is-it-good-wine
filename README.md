@@ -23,7 +23,7 @@ repository and build a docker container with the dockerfile included in this rep
 
 **Mac/Linux Instructions**
 
-**CURRENT WORKING VERSION: Without using Docker**
+**CWithout using Docker**
 To replicate the analysis, clone this GitHub repository, install the dependencies listed below, navigate to the project directory via terminal/command line, and run the following command:
 
 1.
@@ -37,7 +37,7 @@ To reset the repo to a clean state, with no intermediate or results files, run t
 make clean
 ```
 
-**IN PROGRESS: Using Docker**
+**Using Docker**
 
 1.
 ```
@@ -55,7 +55,23 @@ Runnning these commands in the unix shell will host a jupyter lab instance in a 
 http://127.0.0.1:8888/lab?token=<token> # Tokens are generated randomly on each 'docker run' instance.
 ```
 
-The report can then be viewed and interacted with through the jupyter lab interface via report.html (non-interactive static render) and wineclassification.ipynb (interactive python notebook environment).
+Open the Jupyter lab terminal and run the following command
+
+<img width="870" alt="123" src="https://user-images.githubusercontent.com/60054170/228313005-f5e4a3bf-9574-4166-955b-a1be6c0fe5da.png">
+
+3.
+```
+make
+```
+
+To reset the repo to a clean state, with no intermediate or results files, run the following command at the command line/terminal from the root directory of this project:
+
+3a.
+```
+make clean
+```
+
+The report can then be viewed and interacted with through the jupyter lab interface via wineclassification.html (non-interactive static render, also available in pdf format) and wineclassification.ipynb (interactive python notebook environment).
     
 ## Dependencies:
 * Python 3.10 and Python packages:
