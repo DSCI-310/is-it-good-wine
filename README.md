@@ -47,7 +47,7 @@ docker pull jkungcc/dsci-310-group11:latest
 
 2.
 ```
-docker run -p 8888:8888 --rm -it jkungcc/dsci-310-group11:latest
+docker run -p 8888:8888 --rm -it $(pwd):/app jkungcc/dsci-310-group11:latest
 ```
 
 Runnning these commands in the unix shell will host a jupyter lab instance in a docker container that can be accessed by copy and pasting the second URL in the command line output into a browser (e.g. Chrome, Firefox):
