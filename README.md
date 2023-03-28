@@ -24,6 +24,7 @@ repository and build a docker container with the dockerfile included in this rep
 **Mac/Linux Instructions**
 
 **Without Docker**
+
 To replicate the analysis, clone this GitHub repository, install the dependencies listed below, navigate to the project directory via terminal/command line, and run the following command:
 
 1.
