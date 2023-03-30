@@ -2,8 +2,10 @@ FROM jupyter/scipy-notebook:python-3.10
 
 USER root
 
-RUN apt-get update && \
-    apt-get -y install make
+RUN apt-get -y update
+RUN apt-get install -y curl
+RUN curl -LO https://quarto.org/download/latest/quarto-linux-amd64.deb
+RUN dpkg -i quarto-linux-amd64.deb
 
 # Install necessary python packages - the jupyter/scipy-notebook contains the following commented packages: 
 # altair==4.1.0
@@ -12,7 +14,6 @@ RUN apt-get update && \
 # matplotlib==3.6.3
 # scikit-learn==1.2.1
 # ipython==8.8.0
-
 RUN pip install pytest==7.2.2 \
                 argparse==1.4.0 \
                 vl-convert-python==0.7.0 \
@@ -20,8 +21,12 @@ RUN pip install pytest==7.2.2 \
                 jinja2==3.0.3 \
                 requests==2.28.2
 
+USER root
+
 WORKDIR /app
-#COPY . /app
+COPY . /app
+
+RUN quarto check
 
 # Expose port 8888 for Jupyter Notebook
 EXPOSE 8888
