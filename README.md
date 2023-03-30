@@ -23,7 +23,8 @@ repository and build a docker container with the dockerfile included in this rep
 
 **Mac/Linux Instructions**
 
-**CURRENT WORKING VERSION: Without using Docker**
+**Without Docker**
+
 To replicate the analysis, clone this GitHub repository, install the dependencies listed below, navigate to the project directory via terminal/command line, and run the following command:
 
 1.
@@ -37,25 +38,40 @@ To reset the repo to a clean state, with no intermediate or results files, run t
 make clean
 ```
 
-**IN PROGRESS: Using Docker**
+**RECOMMENDED: Using Docker**
 
 1.
 ```
-docker pull jkungcc/dsci-310-group11:latest
-```
-
-2.
-```
-docker run -p 8888:8888 --rm -it jkungcc/dsci-310-group11:latest
+docker run --user root -p 8888:8888 --rm -it -v $(pwd):/app -e CHOWN_HOME=yes -e CHOWN_HOME_OPTS='-R' jkungcc/dsci-310-group11:latest
 ```
 
 Runnning these commands in the unix shell will host a jupyter lab instance in a docker container that can be accessed by copy and pasting the second URL in the command line output into a browser (e.g. Chrome, Firefox):
+
+<img width="450" alt="Jupyter Lab Terminal Output" src="https://user-images.githubusercontent.com/60054170/228313869-cb4c7996-5584-49f4-ba70-558440ce46b0.png">
 
 ```
 http://127.0.0.1:8888/lab?token=<token> # Tokens are generated randomly on each 'docker run' instance.
 ```
 
-The report can then be viewed and interacted with through the jupyter lab interface via report.html (non-interactive static render) and wineclassification.ipynb (interactive python notebook environment).
+Open the Jupyter lab terminal and run the following command
+
+<img width="470" alt="Jupyter Lab Terminal" src="https://user-images.githubusercontent.com/60054170/228313005-f5e4a3bf-9574-4166-955b-a1be6c0fe5da.png">
+
+2.
+```
+make
+```
+
+To reset the repo to a clean state, with no intermediate or results files, run the following command at the command line/terminal from the root directory of this project:
+
+3.
+```
+make clean
+```
+
+The report can then be viewed and interacted with through the jupyter lab interface via wineclassification.html (non-interactive static render) and wineclassification.ipynb (interactive python notebook environment).
+
+<img width="470" alt="image" src="https://user-images.githubusercontent.com/60054170/228913372-f514f701-3912-4e10-a0c8-4a318785ddde.png">
     
 ## Dependencies:
 * Python 3.10 and Python packages:
@@ -66,12 +82,13 @@ The report can then be viewed and interacted with through the jupyter lab interf
   - scikit-learn==1.2.1 
   - ipython==8.8.0
   - pytest==7.2.2
-  - jupyter-book==0.15.1
   - argparse==1.4.0
   - requests==2.28.2
   - jinja2==3.0.3
   - dataframe-image==0.1.7
   - vl-convert-python==0.7.0
+* [Quarto 1.3.290](https://quarto.org/docs/get-started/)
+* [GNU make 3.81](https://gnu.mirror.constant.com/make/)
 
 
 ## Licences: 

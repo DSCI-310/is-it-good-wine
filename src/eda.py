@@ -9,7 +9,7 @@ import vl_convert as vlc
 def eda(input_path, output_path):
     # Read the dataframe
     df = pd.read_csv(input_path)
-    dfi.export(df.head(5), output_path + 'dfprev.png', fontsize=12, table_conversion='chrome')
+    # dfi.export(df.head(5), output_path + 'dfprev.png', fontsize=12, table_conversion='chrome')
 
     # Call the two grapher functions
     tab_png_data = vlc.vegalite_to_png(vl_spec=correlation_table(df))
@@ -19,9 +19,9 @@ def eda(input_path, output_path):
     with open(output_path + "barcount.png", "wb") as f:
         f.write(bar_png_data)
 
-    # The integer specifies to return the train or test dataframe
-    train_df = preprocessor(df, 0)
-    dfi.export(train_df["target"].value_counts().to_frame(), output_path + 'dfclasses.png', fontsize=12, table_conversion='chrome')
+    # # The integer specifies to return the train or test dataframe
+    # train_df = preprocessor(df, 0)
+    # dfi.export(train_df["target"].value_counts().to_frame(), output_path + 'dfclasses.png', fontsize=12, table_conversion='chrome')
 
 
 if __name__ == "__main__":
