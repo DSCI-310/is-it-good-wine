@@ -38,7 +38,7 @@ To reset the repo to a clean state, with no intermediate or results files, run t
 make clean
 ```
 
-**Using Docker**
+**RECOMMENDED: Using Docker**
 
 1.
 ```
