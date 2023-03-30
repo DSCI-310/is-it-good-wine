@@ -1,4 +1,3 @@
-import dataframe_image as dfi
 import pandas as pd
 from grapher import show_correct
 from pipeline import pipe_build
@@ -20,8 +19,8 @@ def analysis(training_path, test_path, input_model, output_path):
     y_test = input_test["target"]
 
     input_pipe = pipe_build(input_model, X_train, y_train)
-    df = show_correct(input_pipe, X_test, y_test).to_frame(name='Positive vs. Negative')
-    dfi.export(df, output_path + input_model + 'correct.png')
+    # df = show_correct(input_pipe, X_test, y_test).to_frame(name='Positive vs. Negative')
+    # dfi.export(df, output_path + input_model + 'correct.png')
 
     fig = class_report(input_pipe, X_test, y_test)
     fig.savefig(output_path + input_model + "report.png", bbox_inches="tight")

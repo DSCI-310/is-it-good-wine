@@ -30,7 +30,5 @@ COPY . /home/jovyan
 
 RUN quarto check
 
-RUN jupyter lab --notebook-dir /home/jovyan
-
 # Expose port 8888 for Jupyter
 EXPOSE 8888
