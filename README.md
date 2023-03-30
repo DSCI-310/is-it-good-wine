@@ -42,7 +42,7 @@ make clean
 
 1.
 ```
-docker run --user root -p 8888:8888 --rm -it -v $(pwd):/home/jovyan -e CHOWN_HOME=yes -e CHOWN_HOME_OPTS='-R' jkungcc/dsci-310-group11:latest
+docker run --user root -p 8888:8888 --rm -it -v $(pwd):/app -e CHOWN_HOME=yes -e CHOWN_HOME_OPTS='-R' jkungcc/dsci-310-group11:latest
 ```
 
 Runnning these commands in the unix shell will host a jupyter lab instance in a docker container that can be accessed by copy and pasting the second URL in the command line output into a browser (e.g. Chrome, Firefox):
