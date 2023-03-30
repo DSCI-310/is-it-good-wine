@@ -70,6 +70,8 @@ make clean
 ```
 
 The report can then be viewed and interacted with through the jupyter lab interface via wineclassification.html (non-interactive static render) and wineclassification.ipynb (interactive python notebook environment).
+
+<img width="470" alt="image" src="https://user-images.githubusercontent.com/60054170/228913372-f514f701-3912-4e10-a0c8-4a318785ddde.png">
     
 ## Dependencies:
 * Python 3.10 and Python packages:
