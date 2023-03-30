@@ -42,12 +42,7 @@ make clean
 
 1.
 ```
-docker pull jkungcc/dsci-310-group11:latest
-```
-
-2.
-```
-docker run -p 8888:8888 --rm -it $(pwd):/app jkungcc/dsci-310-group11:latest
+docker run --user root -p 8888:8888 --rm -it -v $(pwd):/home/jovyan -e CHOWN_HOME=yes -e CHOWN_HOME_OPTS='-R' jkungcc/dsci-310-group11:latest
 ```
 
 Runnning these commands in the unix shell will host a jupyter lab instance in a docker container that can be accessed by copy and pasting the second URL in the command line output into a browser (e.g. Chrome, Firefox):
@@ -62,19 +57,19 @@ Open the Jupyter lab terminal and run the following command
 
 <img width="470" alt="Jupyter Lab Terminal" src="https://user-images.githubusercontent.com/60054170/228313005-f5e4a3bf-9574-4166-955b-a1be6c0fe5da.png">
 
-3.
+2.
 ```
 make
 ```
 
 To reset the repo to a clean state, with no intermediate or results files, run the following command at the command line/terminal from the root directory of this project:
 
-4.
+3.
 ```
 make clean
 ```
 
-The report can then be viewed and interacted with through the jupyter lab interface via wineclassification.html (non-interactive static render, also available in pdf format) and wineclassification.ipynb (interactive python notebook environment).
+The report can then be viewed and interacted with through the jupyter lab interface via wineclassification.html (non-interactive static render) and wineclassification.ipynb (interactive python notebook environment).
     
 ## Dependencies:
 * Python 3.10 and Python packages:
