@@ -24,24 +24,6 @@ eda: src/eda.py cleansplit
 	mkdir results
 	python src/eda.py data/train.csv results/eda_
 
-# generate graphs for hyperparameter tuning process of different models
-# hpfigures: src/hpfigures.py cleansplit
-# 	python src/hpfigures.py data/train.csv lr results/
-# 	python src/hpfigures.py data/train.csv svm results/
-# 	python src/hpfigures.py data/train.csv dtc results/
-
-# generate coffeicent graphs of logistic regression model
-# coefficent: src/coefficients.py cleansplit
-# 	python src/coefficients.py data/train.csv results/coeftable
-
-# generate graphs for performance of different model
-# cor: src/cor_ratio.py data/train.csv cleansplit
-# 	python src/cor_ratio.py data/train.csv data/test.csv lr results/
-# 	python src/cor_ratio.py data/train.csv data/test.csv svm results/
-# 	python src/cor_ratio.py data/train.csv data/test.csv dtc results/
-# 	python src/cor_ratio.py data/train.csv data/test.csv dummy results/
-# 	python src/cor_ratio.py data/train.csv data/test.csv bayes results/
-
 # generate graphs for model comparison
 scores: src/scores.py cleansplit
 	python src/scores.py data/train.csv data/test.csv results/
@@ -50,7 +32,6 @@ scores: src/scores.py cleansplit
 html:
 # jupyter nbconvert --to html --no-input --execute wineclassification.ipynb --output report.html --ExecutePreprocessor.timeout=-1
 	quarto render wineclassification.ipynb --to html
-	quarto render wineclassification.ipynb --to pdf
 
 # clean all generated data, graphs, table and the report
 clean:

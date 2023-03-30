@@ -14,6 +14,8 @@ RUN dpkg -i quarto-linux-amd64.deb
 # matplotlib==3.6.3
 # scikit-learn==1.2.1
 # ipython==8.8.0
+USER root
+
 RUN pip install pytest==7.2.2 \
                 argparse==1.4.0 \
                 vl-convert-python==0.7.0 \
@@ -23,10 +25,12 @@ RUN pip install pytest==7.2.2 \
 
 USER root
 
-WORKDIR /app
-COPY . /app
+WORKDIR /home/jovyan
+COPY . /home/jovyan
 
 RUN quarto check
 
-# Expose port 8888 for Jupyter Notebook
+RUN jupyter lab --notebook-dir /home/jovyan
+
+# Expose port 8888 for Jupyter
 EXPOSE 8888
