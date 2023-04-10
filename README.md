@@ -85,7 +85,7 @@ The report can then be viewed and interacted with through the jupyter lab interf
   - argparse==1.4.0
   - requests==2.28.2
   - jinja2==3.0.3
-  - dataframe-image==0.1.7
+  - dataframe_image==0.1.7
   - vl-convert-python==0.7.0
 * [Quarto 1.3.290](https://quarto.org/docs/get-started/)
 * [GNU make 3.81](https://gnu.mirror.constant.com/make/)
