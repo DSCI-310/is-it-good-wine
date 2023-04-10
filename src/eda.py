@@ -19,11 +19,6 @@ def eda(input_path, output_path):
     with open(output_path + "barcount.png", "wb") as f:
         f.write(bar_png_data)
 
-    # # The integer specifies to return the train or test dataframe
-    # train_df = preprocessor(df, 0)
-    # dfi.export(train_df["target"].value_counts().to_frame(), output_path + 'dfclasses.png', fontsize=12, table_conversion='chrome')
-
-
 if __name__ == "__main__":
     # Set up command-line argument parsing
     parser = argparse.ArgumentParser()
