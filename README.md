@@ -92,6 +92,8 @@ The report can then be viewed and interacted with through the jupyter lab interf
   - jinja2==3.0.3
   - dataframe_image==0.1.7
   - vl-convert-python==0.7.0
+  - altair-saver==0.5.0
+  - dsci-310-group-11-pkg==0.1.1
 * [Quarto 1.3.290](https://quarto.org/docs/get-started/)
 * [GNU make 3.81](https://gnu.mirror.constant.com/make/)
 
