@@ -23,7 +23,7 @@ RUN pip install pytest==7.3.0 \
                 jinja2==3.0.3 \
                 requests==2.28.2 \
 		dsci-310-group-11-pkg==0.1.1 \
-		altair-saver == 0.5.0
+		altair-saver==0.5.0
 
 USER root
 
