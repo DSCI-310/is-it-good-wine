@@ -53,7 +53,7 @@ def class_report(pipe, X_test, y_test):
     clf_report = classification_report(y_test, pipe.predict(X_test), output_dict=True)
     report = sns.heatmap(pd.DataFrame(clf_report).iloc[:-1, :].T, annot=True, linewidth=.5, cmap="crest")
     fig = report.get_figure()
-    return report
+    return fig
 
 def vis_tree(X_train, y_train):
     # DESCRIPTION: Displays a visual example of a decision tree for conceptual
