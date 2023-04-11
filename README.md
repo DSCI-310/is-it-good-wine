@@ -39,6 +39,7 @@ make clean
 ```
 
 **RECOMMENDED: Using Docker**
+
 0.
 ```
 docker pull jkungcc/dsci-310-group11:latest
