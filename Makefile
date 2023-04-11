@@ -13,8 +13,13 @@ all: load cleansplit eda cor scores html
 
 #load the data
 load: src/load.py
+	python src/load.py data/raw_data.csv
 
-# eda graphs
+# clean and split the data
+cleansplit: load src/cleansplit.py
+	python src/cleansplit.py data/raw_data.csv
+
+# conduct eda
 eda: src/eda.py cleansplit
 	mkdir results
 	python src/eda.py data/train.csv results/eda_
@@ -40,9 +45,10 @@ cor: src/cor_ratio.py data/train.csv cleansplit
 # generate graphs for model comparison
 scores: src/scores.py cleansplit
 	python src/scores.py data/train.csv data/test.csv results/
-# generate the report in html format
 
+# generate the report in html format
 html:
+# jupyter nbconvert --to html --no-input --execute wineclassification.ipynb --output report.html --ExecutePreprocessor.timeout=-1
 	quarto render wineclassification.ipynb --to html
 
 # clean all generated data, graphs, table and the report
