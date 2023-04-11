@@ -18,6 +18,13 @@ def clean_data(input_path):
     train_df = preprocessor(df, 0)
     test_df = preprocessor(df, 1)
 
+    # # Splitting into X and y train and test sets
+    # X_train = train_df.drop(columns=["target", "quality"])
+    # y_train = train_df["target"]
+
+    # X_test = test_df.drop(columns=["target", "quality"])
+    # y_test = test_df["target"]
+
     # Write the cleaned data to the output path
     train_df.to_csv(output_train_path, index=False)
     test_df.to_csv(output_test_path, index=False)

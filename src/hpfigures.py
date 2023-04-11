@@ -11,6 +11,10 @@ def hpfigures(input_path, input_model, output_path):
     X_train = input_training.drop(columns=["target", "quality"])
     y_train = input_training["target"]
 
+    # df = hp_optimizer(input_model, X_train, y_train)
+    # df_styled = df.style.background_gradient()
+    # dfi.export(df_styled, output_path + input_model + 'table.png')
+
 if __name__ == "__main__":
     # Set up command-line argument parsing
     parser = argparse.ArgumentParser()

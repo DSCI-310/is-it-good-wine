@@ -13,7 +13,9 @@ def coefficients(input_path, output_path):
     y_train = input_training["target"]
 
     input_pipe = pipe_build('lr', X_train, y_train)
-
+    # df = show_coefficients(input_pipe, X_train)
+    # df_styled = df.style.background_gradient()
+    # dfi.export(df_styled, output_path + '.png')
 
 if __name__ == "__main__":
     # Set up command-line argument parsing

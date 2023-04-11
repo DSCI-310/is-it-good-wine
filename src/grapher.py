@@ -82,8 +82,10 @@ def compare_scores(lst):
     # RETURNS: The bar chart where the highlighted bar is the highest score.
     cscores = lst
 
-    report = pd.DataFrame(
-        [cscores], columns=['Baseline', 'LR', 'SVC', 'DT', 'NB'])
+    report = pd.DataFrame()
+    report = report.append(pd.DataFrame(
+        [cscores], columns=['Baseline', 'LR', 'SVC', 'DT', 'NB']),
+                            ignore_index=True)
 
     report.index = ['Score']
     report = report.T.reset_index()
@@ -99,7 +101,7 @@ def compare_scores(lst):
             'steelblue')  # And if it's not true it sets the bar steelblue.
     )).properties(width=500, height=200).configure(background='lightgrey')
 
-    # y = y.to_json('scores.json')
+    y = y.to_json('scores.json')
     return y
 
 def show_coefficients(pipe, X_train):
