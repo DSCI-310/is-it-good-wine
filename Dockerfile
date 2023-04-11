@@ -16,7 +16,7 @@ RUN dpkg -i quarto-linux-amd64.deb
 # ipython==8.8.0
 USER root
 
-RUN pip install pytest==7.2.2 \
+RUN pip install pytest==7.3.0 \
                 argparse==1.4.0 \
                 vl-convert-python==0.7.0 \
                 dataframe-image==0.1.7 \
