@@ -82,10 +82,8 @@ def compare_scores(lst):
     # RETURNS: The bar chart where the highlighted bar is the highest score.
     cscores = lst
 
-    report = pd.DataFrame()
-    report = report.append(pd.DataFrame(
-        [cscores], columns=['Baseline', 'LR', 'SVC', 'DT', 'NB']),
-                            ignore_index=True)
+    report = pd.DataFrame(
+        [cscores], columns=['Baseline', 'LR', 'SVC', 'DT', 'NB'])
 
     report.index = ['Score']
     report = report.T.reset_index()
