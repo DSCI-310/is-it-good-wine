@@ -33,8 +33,8 @@ def correlation_table(df):
         alt.Tooltip(['correlation_label']),
     ).interactive().properties(width=300, height=300)
 
-    xy = table.to_json('corrtab.json')
-    return xy
+    # xy = table.to_json('corrtab.json')
+    return table
 
 def bar_chart(df):
     # DESCRIPTION: Displays a simple bar chart of the count of the quality variable.
@@ -46,14 +46,14 @@ def bar_chart(df):
     x = alt.Chart(df).mark_bar().encode(alt.X('quality:O'),
                                         alt.Y('count()')).properties(width=200,
                                                                      height=100)
-    xyy = x.to_json('bar.json')
-    return xyy
+    # xyy = x.to_json('bar.json')
+    return x
 
 def class_report(pipe, X_test, y_test):
     clf_report = classification_report(y_test, pipe.predict(X_test), output_dict=True)
     report = sns.heatmap(pd.DataFrame(clf_report).iloc[:-1, :].T, annot=True, linewidth=.5, cmap="crest")
-    fig = report.get_figure()
-    return fig
+    # fig = report.get_figure()
+    return report
 
 def vis_tree(X_train, y_train):
     # DESCRIPTION: Displays a visual example of a decision tree for conceptual
@@ -99,7 +99,7 @@ def compare_scores(lst):
             'steelblue')  # And if it's not true it sets the bar steelblue.
     )).properties(width=500, height=200).configure(background='lightgrey')
 
-    y = y.to_json('scores.json')
+    # y = y.to_json('scores.json')
     return y
 
 def show_coefficients(pipe, X_train):
