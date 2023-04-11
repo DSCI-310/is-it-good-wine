@@ -40,6 +40,11 @@ make clean
 
 **RECOMMENDED: Using Docker**
 
+0.
+```
+docker pull jkungcc/dsci-310-group11:latest
+```
+
 1.
 ```
 docker run --user root -p 8888:8888 --rm -it -v $(pwd):/app -e CHOWN_HOME=yes -e CHOWN_HOME_OPTS='-R' jkungcc/dsci-310-group11:latest
